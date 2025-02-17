@@ -1,0 +1,145 @@
+/* Designed By Mike_Baneshi 
+https://github.com/MikeBaneshi
+*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:vazirmatn,sans-serif ;
+}
+
+body{
+    min-height: 100vh;
+    background: linear-gradient(40deg, #EC407A, #42A5F5);
+    background-image: url(./image.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav{
+    position: fixed;
+    backdrop-filter: blur(12px);
+    width: 85%;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.6);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem 1rem;
+    background: rgba(255,255,255,0.2);
+    top: 2rem;
+    border-radius: 32px;
+    border: 1px rgba(255,255,255,0.3) solid;
+}
+
+ul{
+    list-style: none;    
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: #004D40;
+    font-weight: bold;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: all 0.3 ease-in-out;
+}
+
+a::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #EC407A;
+    bottom: 0;
+    left: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover::after{
+    width: 100%;
+    left: 0;
+}
+
+a:hover{
+    color: #EC407A;
+}
+
+.dropdown{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.btn{
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    backdrop-filter: blur(30px);
+    box-shadow: 0 5px 5px rgba(0,0,0,0.8);
+    padding: 1rem;
+    background: rgba(255,255,255,0.3);
+    top: 2rem;
+    border-radius: 16px;
+    border: 1px rgba(255,255,255,0.3) solid;
+    width: 150px;
+    top: 50px;
+    transition: all 0.4s ease-in-out;
+    transition-delay: 0.1s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+svg{
+    width: 25px;
+    height: 25px;
+    color: #004D40;
+}
+
+.content_item{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn_svg{
+    transition: all 0.4s ease-in-out;
+}
+
+.content_link:hover ~ .dropdown_svg {
+   color: #EC407A;
+}
+
+.btn:hover {
+    .btn_svg {
+    color: #EC407A;
+    transform: rotate(180deg);
+    }
+    .btn_link::after{
+    width: 100%;
+    left: 0;
+    }   
+}
+
+.dropdown:hover{
+    .content{
+        visibility: visible;
+        opacity: 1;
+        transform:translateY(15px)
+    }
+}
